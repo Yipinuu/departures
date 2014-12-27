@@ -1,0 +1,14 @@
+<h1>Users#show</h1>
+<h2>UID:<%= @user.id %> 用户名:<%= @user.username %></h2>
+<h2>联系方式=>邮箱:<%= @user.email %></h2>
+
+<h3>撰写的文章</h3>
+<% for article in @user.articles.all %>
+<p><%= link_to article.title, show_article_path(article) %></p>
+<% end %>
+
+<br/>
+<h3>创建的专栏</h3>
+<% for specol in @user.specols.all %>
+<p><%= link_to specol.title, show_specol_path(specol.title) %></p>
+<% end %>

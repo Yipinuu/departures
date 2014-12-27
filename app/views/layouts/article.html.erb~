@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <title>Departures</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<script>
+  $(document).ready(function()
+  {
+  $('.button').buttonplate();
+  });
+</script>
+
+<%= yield %>
+
+<div id="right">
+    <div id="rightback"></div>
+    <div id="logo">
+    <img src="/assets/logo.jpg" width="180" height="180" alt="" class="fillet-33">
+    </div>
+    <div id="olo" class="fillet-33"></div>
+    <div id="lol"></div>
+    <tags>
+    <%= link_to "所在专栏:"+ "#{@specol.title}", show_specol_path(@specol.title),class:"button line-white small tag" %>
+    <% unless @article.user.nil? %>
+    <%= link_to "文章作者:#{@article.user.username}", show_user_path(@article.user), class:"button line-black small tag"%>
+    <p class="button line-grey small tag">所在分页:<%= pagename ||= @article.spepage.pagename %></p>
+    <% end %>
+
+    </div>
+    <div id="linkto">
+    <%= link_to '返回专栏', show_specol_path(:title => @specol.title), class:"button line-grey pill link_to" %>
+    </tags>
+    <img id="rightimg" src="/assets/banner.jpg" width="1365" height="768" alt=""/>
+</div>
+
+</body>
+</html>

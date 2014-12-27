@@ -1,0 +1,10 @@
+<h1>Spebackstage#show</h1>
+
+
+<h2>specol 管理界面</h2>
+
+<%= link_to '添加分页', new_spepage_path(:title) %>
+
+<%= link_to '添加管理', new_speadmin_path(:title) %>
+
+<br />

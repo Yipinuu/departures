@@ -1,0 +1,21 @@
+这里是用于专栏的百宝箱
+
+<p>current specol is <%= @specol.title %></p>
+
+<p> leavemessages is <%= @experiment.leavemessages %>
+<%= form_for(@experiment, :url => :update_specols_experiments) do |f| %>
+  <%= f.hidden_field :leavemessages, value: false %>
+  <%= f.submit "qiehuan"%>
+<% end %>
+</p>
+
+<p> speadmins is <%= @experiment.speadmins %>
+<%= form_for(@experiment, :url => :update_specols_experiments) do |f| %>
+  <%= f.hidden_field :speadmins, value: false %>
+  <%= f.submit "qiehuan"%>
+<% end %>
+</p>
+
+<%= link_to @specol.title, show_specol_path(:title => @specol.title) %>
+
+

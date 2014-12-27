@@ -1,0 +1,10 @@
+class CreateSpepages < ActiveRecord::Migration
+  def change
+    create_table :spepages do |t|
+      t.string :pagename
+      t.integer :specol_id
+
+      t.timestamps
+    end
+  end
+end

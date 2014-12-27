@@ -1,0 +1,6 @@
+<h2>欢迎你，<%= current_user.username %></h2>
+<% if @specol.nil? %>
+<%= render 'experiments/show_user' %>
+<% else %>
+<%= render 'experiments/show_specols' %>
+<% end %>

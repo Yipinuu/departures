@@ -1,0 +1,8 @@
+class CreateLeavemessages < ActiveRecord::Migration
+  def change
+    create_table :leavemessages do |t|
+
+      t.timestamps
+    end
+  end
+end

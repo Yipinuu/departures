@@ -1,0 +1,11 @@
+class CreatePagings < ActiveRecord::Migration
+  def change
+    create_table :pagings do |t|
+      t.string :pagename
+      t.integer :specol_id
+
+      t.timestamps
+    end
+    add_index :pagings, [:specol_id, :created_at]
+  end
+end

@@ -1,0 +1,4 @@
+class Paging < ActiveRecord::Migration
+  def change
+  end
+end

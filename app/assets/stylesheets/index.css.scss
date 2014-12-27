@@ -1,0 +1,141 @@
+body,div,li,ol,ul{
+	margin:0;
+}
+
+ol,ul{
+	padding-left: 15px;
+}
+
+body{
+	background:#fff;
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+h1{
+	margin:40px;
+	font-size:36px;
+	color:#575757;
+}
+
+h2{
+	margin-left: 50px;
+	font-size:26px;
+    color:#555555;
+}
+
+h3{
+	margin-left:52px;
+	font-size:24px;
+	color:#373737;
+}
+
+p,li{
+	font-size:17px;
+	color:#333333;
+}
+
+span,h4,h5,h6{
+	color:#313131;
+}
+
+
+#left{
+	float:left;
+	margin: 50px 320px 50px 20px;
+}
+
+#right{
+	width: 300px;
+	height: 100%;
+	float:right;
+	position:fixed;
+	background:transparent;
+	right:0px;
+	top: 0px;
+	bottom: 0px;
+	box-shadow:0 0 7px #040A4E;
+}
+
+#rightback{
+	z-index: -2;
+	width: 300px;
+	height: 100%;
+	float:right;
+	position:fixed;
+	background:#747BF3;
+	right:0px;
+	top: 0px;
+	bottom: 0px;
+	filter:alpha(opacity=30);  /*支持 IE 浏览器*/
+    -moz-opacity:0.30; /*支持 FireFox 浏览器*/ 
+    opacity:0.30;  /*支持 Chrome, Opera, Safari 等浏览器*/
+}
+
+#rightimg{
+	z-index: -3;
+	width: 300px;
+	height: 100%;
+	float:right;
+	position:fixed;
+	background:#747BF3;
+	right:0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+#olo {
+	position:relative;
+	width:33px;
+	height:33px;
+	background:#fff;
+	margin-top:62px;
+	margin-left:-23px;
+	float:left;
+}
+
+#lol{
+	margin-top:77px;
+	border-bottom:#2C1A6B dashed 2px;
+        width:300px;
+}
+
+#logo{
+	width:180px;
+	height:180px;
+	margin:0 auto;
+}
+
+#logo img{
+	position:relative;
+	max-width: 180px;
+	margin-top:20px;
+	box-shadow:-7px 7px 35px  #040A4E;
+}
+
+#tags{
+	position:relative;
+	margin: 20px 10px 10px 10px;
+
+}
+
+#linkto{
+	position:fixed;
+	bottom: 10px;
+	margin:10px;
+	margin-left:170px;
+	clear:both;
+}
+
+.link_to{
+	float:right;
+}
+
+.tag{
+	margin: 10px 0px 0px 10px;
+}
+
+.fillet-33 {
+  -moz-border-radius: 33px;
+  -webkit-border-radius: 33px;
+  border-radius: 33px;
+}

@@ -1,0 +1,23 @@
+<div class=row-fluid>
+<div class=.span12>
+<%= grid(@article) do |g|
+
+  g.column name: 'ID' do |t|
+    t.id
+  end
+
+  g.column name: '文章名' do |t|
+    t.title
+  end
+
+  g.column name: '用户名' do |t|
+    t.user.username
+  end
+
+  g.column do |t|
+    link_to "编辑", show_article_path(t)
+  end
+
+end -%>
+</div>
+</div>

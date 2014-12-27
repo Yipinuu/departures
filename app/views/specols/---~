@@ -1,0 +1,59 @@
+<h1>一览</h1>
+
+
+<h2>创建</h2>
+
+<%= link_to "创建专栏", new_specol_path %>
+
+<h2>前10用户</h2>
+<% if User.count >= 10 %>
+  <% 10.times do |f| %>
+  <%= link_to User.find(f+1).username, show_user_path(User.find(f+1)) %>
+  <br />
+  <% end %>
+<% else %>
+  <% for user in User.all %>
+  <%= link_to user.username, show_user_path(user) %>
+  <br />
+  <% end %>
+<% end %>
+
+<h2>前10专栏</h2>
+<% if Specol.count >= 10 %>
+  <% 10.times do |f| %>
+  <%= link_to Specol.find(f+1).title, show_specol_path(specol.find(f+1)) %>
+  <br />
+  <% end %>
+<% else %>
+  <% for specol in Specol.all %>
+  <%= link_to specol.title, show_specol_path(specol.title) %>
+  <br />
+  <% end %>
+<% end %>
+
+
+<h2>文章 - wicegrid</h2>
+
+<div class=row-fluid>
+<div class=.span12>
+<%= grid(@article) do |g|
+
+  g.column name: 'ID' do |t|
+    t.id
+  end
+
+  g.column name: '文章名' do |t|
+    t.title
+  end
+
+  g.column name: '用户名' do |t|
+    t.user.username
+  end
+
+  g.column do |t|
+    link_to "编辑", show_article_path(t)
+  end
+
+end -%>
+</div>
+</div>

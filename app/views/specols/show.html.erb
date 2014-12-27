@@ -1,0 +1,38 @@
+<h1>Specols#show</h1>
+<h2>专栏名：<%= link_to @specol.title, show_specol_path(@specol.title) %></h2>
+<h2>创建者：<%= link_to @specol.user.username , show_user_path(@specol.user) %></h2>
+<% if Experiment.find_by(:specol_id => @specol.id).speadmins %>
+<h2>协作者：
+<% for admin in @speadmins %>
+
+  <%= link_to User.find(admin.user_id).username, show_user_path(admin.user_id) %>
+
+<% end %>
+</h2>
+<% end %>
+
+<% for spepage in @specol.spepages.all   %>
+<div>
+<h3>分页：<%= spepage.pagename %></h3>
+<% for article in spepage.articles %>
+  <p>文章标题：<%= link_to article.title, show_article_path(:id => article.id) %></p>
+<% end %>
+</div>
+<% end %>
+<% if experiment_leavemessages %>
+<%= link_to '留言板', leavemessages_path(:specol_id => @specol.id) %>
+<% end %>
+<% if current_speadmin? %> 
+<%= link_to '管理入口', show_spebackstage_path(:specol_id => @specol.id) %>
+<% end %>
+
+<div>
+<%= link_to "投稿", new_article_path(:specol_id => @specol.id) %>
+</div>
+
+
+-------
+<% for specol in @specols %>
+<%= link_to specol.title, show_specol_path(specol.title) %>
+<% end %>
+

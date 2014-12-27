@@ -1,0 +1,30 @@
+<% if experiment_leavemessages %>
+
+<h1></h1>
+
+<%= form_for(current_user.leavemessages.build(:specol_id => @specol.id), :url => :create_leavemessage) do |f| %>
+
+  <%= f.text_field :message %>
+  <%= f.hidden_field :specol_id %>
+  <%= f.submit "回复"%>
+
+<% end %>
+
+
+<p>留言板</p>
+
+<% for message in @specol.leavemessages.all %>
+  <% if !message.comment.nil? || current_user.id == message.user_id  %>
+    <% if message.comment.nil? %>
+      未回复:<%= message.message %><br />
+    <% else %>
+      问:<%= message.message %><br />
+      答:<%= message.comment %><br />
+    <% end %>
+  <% end %>
+<% end %>
+
+<% else %>
+<br />
+<%= render :text => "没有开通" %>
+<% end %>

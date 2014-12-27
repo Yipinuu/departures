@@ -1,0 +1,22 @@
+<%= render 'spebackstages/model' %>
+
+<% for message in @specol.leavemessages.all %>
+  <% if message.comment.nil? %>
+    <%= message.message %>
+    <br />
+    <%= form_for(message, :url => :create_comment_message) do |f| %> 
+      <%= f.text_field :comment %>
+      <%= f.submit "回复" %>
+   <% end %>
+   <br />
+  <% end %>
+<% end %>
+
+
+
+----
+
+<% for a in Leavemessage.all %>
+
+<%= a.message %>
+<% end %>

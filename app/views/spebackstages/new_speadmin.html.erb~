@@ -1,0 +1,28 @@
+<h1>Spebackstage#new_speadmin</h1>
+
+
+<h2>specol 管理界面</h2>
+
+<%= link_to '添加分页', new_spepage_path(:specol_id => @specol.id) %>
+
+<%= link_to '添加管理', new_speadmin_path(:specol_id => @specol.id) %>
+
+<br />
+
+<%= form_for(Speadmin.new(:specol_id => @specol.id), :url => :create_speadmin) do |f| %>
+
+  <%= f.label :user_id, "输入协作者的Id:" %>
+  <%= f.text_field :user_id %>
+  <%= f.hidden_field :specol_id %>
+  <%= f.submit "添加" %>
+
+<% end %>
+
+------
+<p> 已有协作者: </p>
+<% for admin in @specol.speadmins.all %>
+
+  ID:<%= admin.user_id %><br/>  
+  Name: <%= User.find(admin.user_id).username %><br/>
+
+<% end %>

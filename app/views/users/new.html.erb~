@@ -1,0 +1,22 @@
+<h1>Users#new</h1>
+
+<%= form_for(User.new, :url => :create_user) do |f| %>
+
+  <%= f.label :username, "用户名:" %>
+  <%= f.text_field :username %>
+
+  <br />
+  <%= f.label :email, "注册邮箱:" %>
+  <%= f.text_field :email %>
+
+  <br />
+  <%= f.label :password, "密码:" %>
+  <%= f.password_field :password %>
+
+  <br />
+  <%= f.label :password_confirmation, "再次确认:" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "创建" %>
+
+<% end %>

@@ -1,0 +1,9 @@
+class CreateSpeadmins < ActiveRecord::Migration
+  def change
+    create_table :speadmins do |t|
+      t.integer :specol_id
+
+      t.timestamps
+    end
+  end
+end

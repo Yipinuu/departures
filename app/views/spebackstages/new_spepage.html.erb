@@ -1,0 +1,16 @@
+<h1>Spebackstage#new_spepage</h1>
+
+
+<%= render 'spebackstages/model' %>
+
+<%= form_for(@specol.spepages.build, :url => :create_spepage) do |f|%>
+  <%= f.label :pagename, "增加分页" %>
+  <%= f.text_field :pagename %>
+  <%= f.submit "添加"%>
+<% end %>
+
+-----
+<p>已有分页</p>
+<% for page in @specol.spepages.all %>
+  page:<%= page.pagename %><br/>
+<% end %>

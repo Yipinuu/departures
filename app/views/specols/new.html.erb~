@@ -1,0 +1,19 @@
+<h1>Specols#new</h1>
+
+
+<% if signed_in? %>
+
+<%= form_for(current_user.specols.build, :url => :create_specol) do |f| %>
+
+  <%= f.label :title, "所要创建的基地名: " %>
+  <%= f.text_field :title %>
+
+  <%= f.submit "创建" %>
+
+<% end %>
+
+<%else%>
+
+<%= render plain: "请先登录" %>
+
+<% end %>

@@ -1,0 +1,22 @@
+
+
+<div id="left">
+<h2><%= @article.title %></h2>
+<br/>
+<%= @article.content %>
+<p id="article-time"><%= time_ago_in_words(@article.created_at) %> ago</p>
+</div>
+
+<% content_for :tags do %>
+<div id="tags">
+<%= link_to "所在专栏:"+ "#{@article.specol.title}", show_specol_path(@article.specol.title),class:"button line-white small tag" %>
+<% unless @article.user.nil? %>
+<%= link_to "文章作者:#{@article.user.username}", show_user_path(@article.user), class:"button line-black small tag"%>
+<p class="button line-grey small tag">所在分页:<%= pagename ||= @article.spepage.pagename %></p>
+<% end %>
+</div>
+<div id="linkto">
+<%= link_to '返回专栏', show_specol_path(:title => @article.specol.title), class:"button line-grey pill link_to" %>
+</div>
+<% end %>
+

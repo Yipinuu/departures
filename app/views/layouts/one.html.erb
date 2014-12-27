@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <title>Departures</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if signed_in? %>
+  <%= link_to current_user.username, show_user_path(current_user) %>
+  <%= link_to "退出", destroy_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "登录", new_session_path %>
+  <%= link_to "注册", new_user_path %>
+<% end %>
+</header>
+
+
+<%= yield %>
+
+<br/>
+------------------------------
+<br/>
+<%= link_to "返回首页", root_path %>
+
+</body>
+</html>

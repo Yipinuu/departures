@@ -1,0 +1,22 @@
+class LeaveMessagesController < ApplicationController
+
+  def index
+    @specol = Specol.find(params[:specol_id])
+  end
+
+  def create
+   @message = current_user.leave_messages.build(leave_message_create)
+   if @message.save
+     redirect_to leavemessages_path
+   else
+     render 'index'
+   end
+  end
+
+  private
+
+    def leave_message_create
+      params.require(:leave_message).permit(:comment, :specol_id)
+    end
+
+end

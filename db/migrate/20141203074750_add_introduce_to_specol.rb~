@@ -1,0 +1,6 @@
+class AddIntroduceToSpecol < ActiveRecord::Migration
+  def change
+    add_column :specols, :introduce, :string
+    add_index :specols, [:user_id, :create_id]
+  end
+end

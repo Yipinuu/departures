@@ -1,0 +1,11 @@
+<h1>Articles#show</h1>
+
+<h2>文章标题:<%= link_to @article.title, show_article_path(@article) %></h2><h3>文章作者:<%= link_to @article.user.username, show_user_path(@article.user)%>,所在专栏:<%= link_to @article.specol.title, show_specol_path(@article.specol.title) %>,所在分页:<%= @article.spepage.pagename%></h3>
+<p><%= time_ago_in_words(@article.created_at) %> ago</p>
+<br/>
+
+<p><%= @article.content %></p>
+
+
+<br />
+<%= link_to '返回专栏', show_specol_path(:title => @article.specol.title)  %>

@@ -1,0 +1,16 @@
+这里是用于user的百宝箱
+
+<%= @experiment.user_id %>
+
+<p>留言板功能 <%= @experiment.leavemessages %>
+<%= form_for(@experiment, :url => :update_user_experiments ) do |h| %>
+  <%= h.hidden_field :leavemessages, value: false %>
+  <%= h.submit "切换" %>
+<% end %>
+</p>
+<p>协作者功能 <%= @experiment.speadmins %>
+<%= form_for(@experiment, :url => :update_user_experiments ) do |h| %>
+  <%= h.hidden_field :speadmins, value: false %>
+  <%= h.submit "切换" %>
+<% end %>
+</p>

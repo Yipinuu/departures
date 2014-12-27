@@ -1,0 +1,31 @@
+h1 一览
+
+h2 创建
+
+= link_to '创建专栏', new_specol_path
+
+h2 前10用户
+
+- if User.count >=10
+  - 10.times do |f|
+    = link_to User.find(f+1).username, show_user_path(User.find(f+1))
+    br
+- else
+  - for user in User.all
+    = link_to user.username, show_user_path(user)
+    br
+
+h2 前10专栏
+- if Specol.count >= 10
+  - 10.times do |f|
+    = link_to Sepcol.find(f+1).title, show_specol_path(specol.find(f+1))
+    br
+else
+  - for specol in Specol.all
+    = link_to specol.title, show_specol_path(specol.title)
+    br
+ 
+h2 文章 -wicegrid
+
+= render 'artciles_grid'
+

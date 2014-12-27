@@ -1,0 +1,4 @@
+class ExperimentController < ApplicationController
+  def show
+  end
+end

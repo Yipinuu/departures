@@ -1,0 +1,6 @@
+<%= form_for(@specol.spepages.build, :url => :create_spepage) do |f|%>
+  <%= f.label :pagename, "增加分页" %>
+  <%= f.text_field :pagename %>
+  <%= f.hidden_field :specol_id %>
+  <%= f.submit "添加"%>
+<% end %>
